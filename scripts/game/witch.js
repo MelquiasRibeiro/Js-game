@@ -1,15 +1,21 @@
 class Witch extends Animation{
-    constructor(positions, image,x,altura, largura,spriteWidth,spriteHeigth){
-        super(positions, image,x,altura, largura,spriteWidth,spriteHeigth)
-        
-        this.yInitial = height - this.altura;
-        this.y = this.y
+    constructor(positions, image,x,yvariation,altura, largura,spriteWidth,spriteHeigth){
+        super(positions, image,x,yvariation,altura, largura,spriteWidth,spriteHeigth)
+
+        this.yvariation = yvariation;
+        this.yInitial = height - this.altura - this.yvariation;
+        this.y = this.y;
         this.jumpSpeed = 0;
         this.gravity = 5;
+        this.jumpHeight=-50
+        this.jumps = 0 ;
     }
 
     jump(){
-        this.jumpSpeed = -50;   
+        if(this.jumps < 2){
+            this.jumpSpeed = this.jumpHeight;   
+            this.jumps++
+        }
     }
 
     aplyGravity(){
@@ -18,6 +24,7 @@ class Witch extends Animation{
 
         if(this.y > this.yInitial){
             this.y = this.yInitial;
+            this.jumps = 0
         }
     }
 

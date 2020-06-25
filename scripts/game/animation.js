@@ -1,11 +1,12 @@
 class Animation{
-    constructor(positions, image,x,altura, largura,spriteWidth,spriteHeigth){
+    constructor(positions, image,x,yvariation,altura, largura,spriteWidth,spriteHeigth){
         this.positions = positions,
         this.image = image;
         this.largura = largura
         this.altura = altura
+        this.yvariation= yvariation;
         this.x = x;
-        this.y = height - this.altura;
+        this.y = height - this.altura -this.yvariation;
         this.spriteWidth = spriteWidth;
         this.spriteHeigth =spriteHeigth;
         this.frame = 0;

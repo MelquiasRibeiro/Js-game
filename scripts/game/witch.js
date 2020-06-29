@@ -29,10 +29,7 @@ class Witch extends Animation{
     }
 
     colision(enemy){
-        noFill()
-
         const precision = 0.7;
-
         const collided = collideRectRect(
             this.x,
             this.y,

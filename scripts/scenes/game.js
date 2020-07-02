@@ -85,6 +85,7 @@ class Game {
             life.loseLife()
             witch.beInvulnerable()
             if(life.lifes ===0){
+              gameSound.stop()
               renderNow = 'gameOver'
               gameOver.draw()
               noLoop()

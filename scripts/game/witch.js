@@ -9,6 +9,8 @@ class Witch extends Animation{
         this.gravity = 5;
         this.jumpHeight=-50
         this.jumps = 0 ;
+        this.invulnerable = false;
+
     }
 
     jump(){
@@ -27,8 +29,17 @@ class Witch extends Animation{
             this.jumps = 0
         }
     }
+    beInvulnerable(){
+        this.invulnerable = true;
+        setTimeout(()=>{this.invulnerable=false},1000)
+    }
+
 
     colision(enemy){
+        if(this.invulnerable){
+            return false
+        }
+
         const precision = 0.7;
         const collided = collideRectRect(
             this.x,

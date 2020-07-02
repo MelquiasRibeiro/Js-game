@@ -19,6 +19,8 @@ let renderNow="initial";
 let initialImage;
 let font;
 let button;
+let life;
+let lifeImage;
 
 
 const enemys =[];

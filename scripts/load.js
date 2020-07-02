@@ -9,6 +9,5 @@ function preload(){
     gameOverImage = loadImage('imagens/assets/game-over.png')
     initialImage = loadImage('imagens/assets/telaInicial.png') 
     font = loadFont('imagens/assets/fonteTelaInicial.otf') 
-
-    
+    lifeImage = loadImage('imagens/assets/coracao.png')
   }

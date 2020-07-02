@@ -6,6 +6,7 @@ class Game {
     setUp(){
         scenerio = new Scenario(scenarioImage, 3);
         witch = new Witch(matrixWitch, witchImage, 0,30, 110, 135, 220, 270);
+        life = new Life(3,3);
         const drop = new Enemy(matrixDrop, dropImage, width-50,30 ,52, 52, 104, 104,10,100)
         const troll = new Enemy(matrixTroll, trollImage, width,0 ,200, 200, 400, 400,10,100)
         const flyerDrop = new Enemy(matrixFlyerDrop, flyerDropImage, width-52,200 ,100, 75, 200, 150,10,100)
@@ -29,6 +30,7 @@ class Game {
         witch.aplyGravity(); 
         points.show();
         points.getPoints();
+        life.draw();
         
         const enemyOnScreen = enemys[this.enemyId];
         const visibleEnemy = enemyOnScreen.x < -enemyOnScreen.largura;
@@ -47,8 +49,12 @@ class Game {
           }
           
           if (witch.colision(enemyOnScreen)) {
-            image(gameOverImage, width/2 - 200, height/3)      
-            noLoop()
+            life.loseLife()
+            witch.beInvulnerable()
+            if(life.lifes ===0){
+              image(gameOverImage, width/2 - 200, height/3)  
+              noLoop()
+            }
           }
     }
 }

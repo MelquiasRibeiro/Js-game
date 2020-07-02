@@ -5,9 +5,12 @@ function setup() {
   game = new Game();
   game.setUp()
   initial = new Initial();
+  gameOver = new GameOver();
   scenes = {
     game,
-    initial
+    initial,
+    gameOver,
+    
   }
   button = new Button('Play', width/2, height/3);
 }

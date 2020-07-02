@@ -21,6 +21,8 @@ let font;
 let button;
 let life;
 let lifeImage;
+let gameOverBg;
+let gameover;
 
 
 const enemys =[];

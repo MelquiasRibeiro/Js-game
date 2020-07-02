@@ -85,7 +85,8 @@ class Game {
             life.loseLife()
             witch.beInvulnerable()
             if(life.lifes ===0){
-              image(gameOverImage, width/2 - 200, height/3)
+              renderNow = 'gameOver'
+              gameOver.draw()
               noLoop()
             }
           }

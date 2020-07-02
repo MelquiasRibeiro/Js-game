@@ -14,9 +14,15 @@ class Button {
     }
 
     _chageScene(){
-        if (renderNow == 'gameOver') window.location.reload();
         this.button.remove();
-        renderNow ='game'
+        if (renderNow == 'gameOver') {
+            window.location.reload();
+        }else{
+            renderNow ='game'
+        }
+    
+
+    
     }
 
 }
